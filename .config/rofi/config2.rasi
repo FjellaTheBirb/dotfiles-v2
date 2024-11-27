@@ -1,0 +1,125 @@
+/******************************************************************************
+ * ROFI Color theme
+ * User: Rasi
+ * Copyright: Rasmus Steinke
+ ******************************************************************************/
+configuration {
+    font: "JetBrains Mono 10";
+}
+
+* {
+    foreground:                  rgba ( 140, 100, 228, 100 % );
+    normal-foreground:           @foreground;
+    alternate-normal-foreground: @foreground;
+    selected-normal-foreground:  @separator-color;
+    
+    background:                  rgba ( 29, 22, 35, 100 % );
+    normal-background:           @background;
+    alternate-normal-background: @background;
+    selected-normal-background:  @background; //rgba ( 140, 100, 228, 100 % );
+
+    border-color:                @foreground;
+    spacing:                     2;
+    separator-color:             rgba ( 99, 199, 126, 100 % );
+
+}
+
+window {
+    background-color: @background;
+    border:           1;
+    border-color: @separator-color;
+    padding:          5;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+    background-color: @background;
+}
+message {
+    border:       1px dash 0px 0px ;
+    border-color: @separator-color;
+    padding:      1px ;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    border-color: @separator-color;
+    spacing:      2px ;
+    scrollbar:    true;
+    padding:      2px 0px 0px;
+    background-color: @background;
+}
+element {
+    border:  0;
+    padding: 1px ;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.selected.normal {
+    background-color: @separator-color; 	//@selected-normal-background;
+    text-color:       @background;		//@selected-normal-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+scrollbar {
+    border:       0;
+    handle-width: 3px ;
+    padding:      0;
+    handle-color: #F9DBBD; //@separator-color;
+    background-color: @background;
+}
+mode-switcher {
+    border:       2px dash 0px 0px ;
+    border-color: @separator-color;
+    background-color: @background;
+}
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    background-color: @background;
+}
+inputbar {
+    spacing:    0;
+    text-color: #F9DBBD; //@normal-foreground;
+    padding:    1px ;
+    background-color: @background;
+}
+case-indicator {
+    spacing:    0;
+    text-color: #F9DBBD; //@separator-color;
+    background-color: @background;
+}
+entry {
+    spacing:    0;
+    text-color: #F9DBBD; //@separator-color;
+    background-color: @background;
+    placeholder: "Type to filter";
+    placeholder-color: @background;
+}
+prompt {
+    spacing:    0;
+    text-color: #F9DBBD; //@normal-foreground;
+    background-color: @background;
+}
+inputbar {
+    background-color: @background;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: #F9DBBD; //@normal-foreground;
+    background-color: @background;
+}
